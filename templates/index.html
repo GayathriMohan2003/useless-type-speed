@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typing Speed Test with Leaderboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    /* Added minimal styles for the username input and image */
+    #username {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .typing-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Typing Speed Test</h2>
+
+    <input type="text" id="username" placeholder="Enter your name (optional)" />
+
+    <img src="/static/images/keyboard.jpg" alt="Typing Image" class="typing-image" />
+
+    <div id="text">Loading text...</div>
+
+    <input type="text" id="input" placeholder="Start typing here..." autocomplete="off" />
+
+    <div class="stats">
+      <div>Time Left: <span id="timer">60</span>s</div>
+      <div>WPM: <span id="wpm">0</span></div>
+      <div>Accuracy: <span id="accuracy">100%</span></div>
+    </div>
+
+    <button id="restart">Restart Test</button>
+    <button id="toggle-sound">Mute 🔊</button>
+
+    <h3>Leaderboard (Top 10)</h3>
+    <table id="leaderboard" style="width:100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background: #0077ff; color: white;">
+          <th style="padding: 8px; border: 1px solid #ccc;">Rank</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Name</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">WPM</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <tr><td colspan="4" style="text-align:center; padding: 10px;">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
